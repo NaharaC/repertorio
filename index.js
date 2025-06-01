@@ -1,6 +1,6 @@
 import express from 'express'
 import 'dotenv/config'
-import {getHome, getSongs, postSong} from './src/controllers/songs.controllers.js'
+import { getHome, getSongs, postSong, putSong, deleteSong } from './src/controllers/songs.controllers.js'
 
 const app = express()
 
@@ -15,3 +15,7 @@ app.get('/', getHome)
 app.get('/canciones', getSongs)
 
 app.post('/canciones', postSong)
+
+app.put('/canciones/:id', putSong)
+
+app.delete('/canciones/:id', deleteSong)
